@@ -13,9 +13,10 @@
 // plaintext = text to be encrypted
 // key = permutation of #'s 1 -> m
 // m = length of key and # of columns
-char* encrypt(char* plaintext, int m, int* key[]) { //
+char* encrypt(char* plaintext, int m, int key[]) { //
 
-    char ciphertext[100]; //initialize final string
+    //char ciphertext[100]; //initialize final string
+    char *ciphertext = (char *)malloc(100 * sizeof(char));
     int length; //initialize string length variable
     int n;
 
@@ -63,12 +64,12 @@ char* encrypt(char* plaintext, int m, int* key[]) { //
         }
     }
 
-    //test output of encryption 2d array
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            printf("%c", matrix[i][j]);   
-        }
-    }
+    // //test output of encryption 2d array
+    // for (int i = 0; i < n; i++) {
+    //     for (int j = 0; j < m; j++) {
+    //         printf("%c", matrix[i][j]);   
+    //     }
+    // }
 
     // Step 4: Concatenate letters from 2d array in order of key
 
@@ -78,13 +79,13 @@ char* encrypt(char* plaintext, int m, int* key[]) { //
     // find the index position of 1 and print all column values (chunk 1 -> column 2)
     // empty destination string "ciphertext", add all column values, then continue iteration 
 
-    int tempKey[] = {4,3,1,2,5,6,7};
+    //int tempKey[] = {4,3,1,2,5,6,7};
 
 
     for (int i = 1; i <= m; i++) {
         //search key for index of current chunk
         for (int index = 0; index < m; index++){ //m is length of key array
-            if (i == tempKey[index]) { //found column index to concatenate PROBLEM IS HERE ACCESSING KEY
+            if (i == key[index]) { //found column index to concatenate PROBLEM IS HERE ACCESSING KEY
                 //add column values to destination string
                 for (int row = 0; row < n; row++) {
                     //ciphertext[strlen(ciphertext)] = matrix[row][index]; didnt work
@@ -94,6 +95,9 @@ char* encrypt(char* plaintext, int m, int* key[]) { //
             }
         }
     }
+    
+    printf("\nfunction is reaching here in encrypt\n");
+    printf("%s", ciphertext);
     
     return ciphertext;
 }
