@@ -97,7 +97,6 @@ int main(int argc, char* argv[]){
 
     while(1) {
 
-
         printf("Enter 'encrypt' 'decrypt', or 'quit': ");
         char command[20];
         scanf("%s", command);
@@ -152,32 +151,6 @@ int main(int argc, char* argv[]){
         }
 
     }
-
-    // printf("Enter a string: ");
-    // // Read a line of input from the user
-    // if (fgets(userInput, bufferSize, stdin) == NULL) {
-    //     fprintf(stderr, "Error reading input\n");
-    //     free(userInput);
-    //     return 1;
-    // }
-
-    // // Remove the newline character at the end, if present
-    // size_t len = strlen(userInput);
-    // if (len > 0 && userInput[len - 1] == '\n') {
-    //     userInput[len - 1] = '\0';
-    // }
-
-    // // Now userInput contains the user's input
-    // printf("You entered: %s\n", userInput);
-
-    // char* s = encrypt(userInput, m, key);
-    
-    // printf("\n");
-    // char* d = decrypt(s, m, key);
-
-    // printf("\nThe following is testing the returns of the functions:\n"); 
-    // printf("%s\n", s);
-    // printf("%s\n", d);
 
     return 0;
 }

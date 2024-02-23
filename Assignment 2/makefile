@@ -4,5 +4,5 @@ DEPS=
 OBJ = main.o
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
-demo: $(OBJ)
+railcipher: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
