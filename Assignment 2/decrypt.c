@@ -45,8 +45,8 @@ char* decrypt(char* ciphertext, int m, int key[]) {
         }
     }
 
-    printf("\nfunction is reaching here in decrypt\n");
-    printf("%s", decryptedText);
+    // printf("\nfunction is reaching here in decrypt\n");
+    // printf("%s", decryptedText);
 
     return decryptedText;
 

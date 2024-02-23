@@ -96,8 +96,8 @@ char* encrypt(char* plaintext, int m, int key[]) { //
         }
     }
     
-    printf("\nfunction is reaching here in encrypt\n");
-    printf("%s", ciphertext);
+    // printf("\nfunction is reaching here in encrypt\n");
+    // printf("%s", ciphertext);
     
     return ciphertext;
 }
